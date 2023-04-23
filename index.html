@@ -13,14 +13,15 @@
   <div id="app">
     <h1>Vue Todo App</h1>
     <div class="container">
-      <form>
-        <input type="text" placeholder="Aggiungi un todo">
+      <form  @submit.prevent="addTodo">
+        <input type="text" placeholder="Aggiungi un todo" v-model="newTodoText">
         <button type="submit">Aggiungi</button>
       </form>
       <ul>
-        <li>
-          <span></span>
-          <button></button>
+        <li v-for="(todo, index) in todos" :key="index" :class="{ 'done': todo.done }">
+          <span @click="toggleDone(todo)">{{ todo.text }}</span>
+          <button @click="removeTodo(index)">x</button>
+
         </li>
       </ul>
     </div>
