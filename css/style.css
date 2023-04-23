@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   background-color: #F2F2F2;
   font-family: sans-serif;
@@ -64,6 +63,10 @@ li {
   font-size: 16px;
 }
 
+li.done {
+  text-decoration: line-through;
+  color: #9CA3AF;
+}
 
 li span {
   cursor: pointer;
